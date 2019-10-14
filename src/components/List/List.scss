@@ -13,6 +13,10 @@
   display: flex;
   justify-content: space-between;
   overflow: auto;
+}.title {
+  text-align: center;
+  font-size: ($base-size * 1.5);
+  margin: 0 0 ($base-size * 1.5) 0;
 }
 
 .creator {
