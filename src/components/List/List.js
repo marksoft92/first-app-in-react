@@ -4,7 +4,7 @@ import Hero from '../Hero/Hero.js';
 import Column from '../Column/Column.js';
 import Creator from '../Creator/Creator.js';
 import PropTypes from 'prop-types';
-
+import Icon from '../Icon.js'
 import {settings} from '../../data/dataStore.js';
 import ReactHtmlParser from 'react-html-parser';
 class List extends React.Component {
@@ -16,6 +16,7 @@ class List extends React.Component {
     image: PropTypes.string,
     description: PropTypes.node,
     columns: PropTypes.array,
+    icon: PropTypes.node,
   }
   static defaultProps = {
    description: settings.defaultListDescription,

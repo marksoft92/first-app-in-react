@@ -4,17 +4,19 @@ import Card from '../Card/Card.js';
 
 import Creator from '../Creator/Creator.js';
 import PropTypes from 'prop-types';
-import {settings} from '../../data/dataStore.js';
+import {settings, pageContents, listData} from '../../data/dataStore.js';
 import ReactHtmlParser from 'react-html-parser';
+import Icon from '../Icon.js';
 class Column extends React.Component {
     state = {
         cards: this.props.cards || [],
       }
       static propTypes = {
         title: PropTypes.node,
-       
+       icon: PropTypes.node,
         description: PropTypes.node,
         cards: PropTypes.array,
+       
       }
       static defaultProps = {
        description: settings.defaultColumnDescription,
@@ -38,11 +40,8 @@ class Column extends React.Component {
         return (
             <section className={styles.component}>
             
-        <h3 className={styles.title}>{this.props.title}</h3>
-            <div className={styles.description}>
-              
-      {ReactHtmlParser(this.props.description)}
-    </div>
+        <h3 className={styles.title}><span className={styles.icon}><i className={`fas fa-${this.props.icon}`}></i></span>{this.props.title}</h3>
+          
     <div className={styles.cards}>
     {this.state.cards.map(({key, ...cardProps}) => (
       <Card key={key} {...cardProps} />
