@@ -1,33 +1,33 @@
 import React from 'react';
-import styles from './List.scss';
+import styles from './Card.scss';
 import Hero from '../Hero/Hero.js';
 import Column from '../Column/Column.js';
 import Creator from '../Creator/Creator.js';
 import PropTypes from 'prop-types';
 import {settings} from '../../data/dataStore.js';
 import ReactHtmlParser from 'react-html-parser';
-class List extends React.Component {
+class Card extends React.Component {
   state = {
-    columns: this.props.columns || [],
+    cards: this.props.cards || [],
   }
   static propTypes = {
     title: PropTypes.node,
     image: PropTypes.string,
     description: PropTypes.node,
-    columns: PropTypes.array,
+    cards: PropTypes.array,
   }
   static defaultProps = {
-   description: settings.defaultListDescription,
+   description: settings.defaultCardDescription,
   }
-  addColumn(title){
+  addCard(title){
     this.setState(state => (
       {
-        columns: [
-          ...state.columns,
+        cards: [
+          ...state.cards,
           {
-            key: state.columns.length ? state.columns[state.columns.length-1].key+1 : 0,
+            key: state.column.length ? state.columns[state.columns.length-1].key+1 : 0,
             title,
-            icon: 'list-alt',
+            icon: 'Card-alt',
             cards: []
           }
         ]
@@ -38,23 +38,23 @@ class List extends React.Component {
   render() {
     return (
       <section className={styles.component}>
-        <Hero titleText={this.props.title} titleImage={this.props.image}  />
-    <h3 className={styles.title}>Sekcja z Kolumnami</h3>
+        
+    
         <div className={styles.description}>
           
   {ReactHtmlParser(this.props.description)}
 </div>
-<div className={styles.columns}>
-{this.state.columns.map(({key, ...columnProps}) => (
-  <Column key={key} {...columnProps} />
+<div className={styles.cards}>
+{this.state.cards.map(({key, ...columnProps}) => (
+  <Card key={key} {...columnProps} />
 ))}
 </div>
 <div className={styles.creator}>
-  <Creator text={settings.columnCreatorText} action={title => this.addColumn(title)}/>
+  <Creator text={settings.cardCreatorText} action={title => this.addCard(title)}/>
 </div>
         </section>
     )
   }
 }
 
-export default List;
+export default Card;
