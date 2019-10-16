@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Column.scss';
 import Card from '../Card/Card.js';
 
-import Creator from '../Creator/Creator.js';
+//import Creator from '../Creator/Creator.js';
 import PropTypes from 'prop-types';
 import {settings} from '../../data/dataStore.js';
 
@@ -37,9 +37,9 @@ class Column extends React.Component {
               ))}
             </div>
                               
-            <div className={styles.creator}>
+            {/*} <div className={styles.creator}>
               <Creator text={settings.cardCreatorText} action={title => this.addCard(title)}/>
-            </div>*
+            </div>*/}
           </section>
         );
       }
