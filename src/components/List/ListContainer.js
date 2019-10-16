@@ -1,8 +1,15 @@
 import {connect} from 'react-redux';
 import List from './List';
-
+import getColumnsForList from '../../redux/columnsRedux.js';
+import createAction_addColumn from '../../redux/columnsRedux.js';
 const mapStateToProps = (state, props) => ({
   columns: getColumnsForList(state, props.id),
 });
-export const getColumnsForList = ({columns}, listId) => columns.filter(column => column.listId == listId);
-export default connect(mapStateToProps)(List);
+const mapDispatchToProps = (dispatch, props) => ({
+  addColumn: title => dispatch(createAction_addColumn({
+    listId: props.id,
+    title,
+  })),
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(List);
