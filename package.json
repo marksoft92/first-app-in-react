@@ -6,7 +6,15 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+    "lint-staged": {
+      "src/**/*.js": "eslint"
+    }
   },
   "keywords": [],
   "author": "",
