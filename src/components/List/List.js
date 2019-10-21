@@ -18,7 +18,7 @@ class List extends React.Component {
     addColumn: PropTypes.func,
   }
   static defaultProps = {
-   description: settings.defaultListDescription,
+    description: settings.defaultListDescription,
   }
 
 
@@ -27,21 +27,21 @@ class List extends React.Component {
     return (
       <section className={styles.component}>
         <Hero titleText={title} titleImage={image}  />
-    <h3 className={styles.title}>Sekcja z Kolumnami</h3>
+        <h3 className={styles.title}>Sekcja z Kolumnami</h3>
         <div className={styles.description}>
           
-  {ReactHtmlParser(description)}
-</div>
-<div className={styles.columns}>
-{columns.map(columnData => (
-  <Column key={columnData.id} {...columnData} />
-))}
-</div>
-<div className={styles.creator}>
-  <Creator text={settings.columnCreatorText} action={addColumn}/>
-</div>
-        </section>
-    )
+          {ReactHtmlParser(description)}
+        </div>
+        <div className={styles.columns}>
+          {columns.map(columnData => (
+            <Column key={columnData.id} {...columnData} />
+          ))}
+        </div>
+        <div className={styles.creator}>
+          <Creator text={settings.columnCreatorText} action={addColumn}/>
+        </div>
+      </section>
+    );
   }
 }
 
