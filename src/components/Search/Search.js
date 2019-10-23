@@ -44,7 +44,7 @@ class Search extends React.Component {
     const {value} = this.state;
     return (
       
-      <div className={styles.component}><Container />
+      <div className={styles.component}><Container >
         <input
           type='text'
           placeholder={text}
@@ -52,11 +52,11 @@ class Search extends React.Component {
           onChange={event => this.handleChange(event)}
         />
         <div className={styles.buttons}>
-          <Button onClick={() => this.handleOK()}><Icon name={icon} /></Button>
+          <Button onClick={() => this.handleOK()}><Icon icon={`fas fa-${icon}`}/></Button>
         </div>
         <div>
           { countVisible == countAll ? '' : `${countVisible} / ${countAll}` }
-        </div>
+        </div></Container>
       </div>
     );
   }
