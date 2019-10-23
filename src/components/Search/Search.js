@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Search.scss';
 import Button from '../Button/Button';
+import Container from '../Container/Container';
 import PropTypes from 'prop-types';
 import { settings } from '../../data/dataStore';
 import Icon from '../Icon/Icon';
@@ -42,7 +43,8 @@ class Search extends React.Component {
     const {text, icon, countVisible, countAll} = this.props;
     const {value} = this.state;
     return (
-      <div className={styles.component}>
+      
+      <div className={styles.component}><Container />
         <input
           type='text'
           placeholder={text}

@@ -4,6 +4,7 @@ import Hero from '../Hero/Hero.js';
 import Column from '../Column/ColumnContainer.js';
 import Creator from '../Creator/Creator.js';
 import PropTypes from 'prop-types';
+import Container from '../Container/Container';
 
 import {settings} from '../../data/dataStore.js';
 import ReactHtmlParser from 'react-html-parser';
@@ -26,6 +27,7 @@ class List extends React.Component {
     const {addColumn,columns,title, image, description} = this.props;
     return (
       <section className={styles.component}>
+        <Container />
         <Hero titleText={title} titleImage={image}  />
         <h3 className={styles.title}>Sekcja z Kolumnami</h3>
         <div className={styles.description}>
