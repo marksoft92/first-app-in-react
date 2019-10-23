@@ -7,7 +7,7 @@ import {faq} from '../../data/dataStore.js';
 
 
 const Faq = () => (
-    <Container> <Hero {...faq}/>
+  <Container> <Hero {...faq}/>
     {faq.description}
   </Container>
 );

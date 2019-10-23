@@ -22,10 +22,10 @@ export const pageContents = {
   subtitle: 'A simple to-do app, with lists, columns and cards',
 };
 export const info ={ title: 'About us',
-description: 'ALL about us check!',
+  description: 'ALL about us check!',
   image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png'};
 export const faq ={ title: 'all FAQ ',
-description: 'All the answers .',
+  description: 'All the answers .',
   
   image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png'};
 

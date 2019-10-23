@@ -4,7 +4,7 @@ import Hero from '../Hero/Hero';
 import {info} from '../../data/dataStore.js';
 const Info = () => (
   <Container> <Hero {...info}/> 
-  {info.description}
+    {info.description}
   </Container>
 );
 
