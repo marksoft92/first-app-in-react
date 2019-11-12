@@ -5,13 +5,14 @@ import Container from '../Container/Container';
 import PropTypes from 'prop-types';
 import { settings } from '../../data/dataStore';
 import Icon from '../Icon/Icon';
+import {withRouter} from 'react-router';
 
 class Search extends React.Component {
   static propTypes = {
     text: PropTypes.string,
     icon: PropTypes.string,
     searchString: PropTypes.string,
-    changeSearchString: PropTypes.func,
+    history: PropTypes.object,
     countVisible: PropTypes.number,
     countAll: PropTypes.number,
   }
@@ -32,7 +33,8 @@ class Search extends React.Component {
   }
 
   handleOK(){
-    this.props.changeSearchString(this.state.value);
+    
+    this.props.history.push(`/search/${this.state.value}`);
   }
 
   UNSAFE_componentWillReceiveProps(newProps){
@@ -62,4 +64,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default withRouter(Search);
